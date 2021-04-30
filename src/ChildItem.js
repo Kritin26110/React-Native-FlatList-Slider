@@ -9,10 +9,12 @@ export default (ChildItem = ({
   imageKey,
   local,
   height,
+  resizeMode = 'strech'
 }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={() => onPress(index)}>
       <Image
+         resizeMode={resizeMode}
         style={[styles.image, style, {height: height}]}
         source={local ? item[imageKey] : {uri: item[imageKey]}}
       />
@@ -23,7 +25,6 @@ export default (ChildItem = ({
 const styles = StyleSheet.create({
   container: {},
   image: {
-    height: 230,
-    resizeMode: 'contain',
+    height: 230
   },
 });
